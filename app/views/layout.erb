@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css?app=skills">
+  <link rel="stylesheet" href="/css/application.css?app=skills">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js?app=skills"></script>
+
+  <!-- MATERIALIZE STYLE SHEETS -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <!-- materilize icons for beauty-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title></title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper black">
+        <a class="brand-logo" href="/">Web-PSYCH</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if logged_in? %>
+            <li><form method="post" action="/sessions">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Logout" class="text_button">
+            </form></li>
+          <% else %>
+            <li><a href="/sessions/new">Login </a></li>
+            <li><a href="/users/new">Register </a></li>
+          <% end %>
+        </ul>
+    </div>
+  </nav>
+
+  <%= yield %>
+</body>
+</html>
