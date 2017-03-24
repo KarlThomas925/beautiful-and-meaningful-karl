@@ -1,0 +1,8 @@
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.parallax-container {
+  max-height: 400px;
+}
